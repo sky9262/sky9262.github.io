@@ -1,0 +1,321 @@
+:root {
+    --color-bg: #F8F7F4;
+    --color-text: #333333;
+    --color-text-secondary: #666666;
+    --color-accent: #B7410E;
+    --color-border: #E5E5E5;
+    --color-card-bg: #FFFFFF;
+}
+
+:root.dark {
+    --color-bg: #1a1a1a;
+    --color-text: #e5e5e5;
+    --color-text-secondary: #a3a3a3;
+    --color-accent: #ff6b35;
+    --color-border: #404040;
+    --color-card-bg: #262626;
+}
+
+body {
+    font-family: 'M PLUS 1p', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.font-display {
+    font-family: 'Noto Serif JP', serif;
+}
+.font-body {
+    font-family: 'M PLUS 1p', sans-serif;
+}
+.bg-accent {
+    background-color: var(--color-accent);
+}
+.text-accent {
+    color: var(--color-accent);
+}
+.border-accent {
+    border-color: var(--color-accent);
+}
+.text-text-secondary {
+    color: var(--color-text-secondary);
+}
+.bg-bg {
+    background-color: var(--color-bg);
+}
+
+#page-content {
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+}
+
+#three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+#main-header {
+    background-color: rgba(248, 247, 244, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+:root.dark #main-header {
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+#main-header.scrolled {
+    background-color: rgba(248, 247, 244, 0.9);
+    border-bottom-color: var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+:root.dark #main-header.scrolled {
+    background-color: rgba(26, 26, 26, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 6px;
+    color: var(--color-text-secondary);
+}
+.nav-link:hover {
+    color: var(--color-text);
+    background-color: rgba(0,0,0,0.03);
+}
+
+:root.dark .nav-link:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+.nav-link.active {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+.nav-link::after {
+    content: none;
+}
+.nav-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
+    width: 80%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#work, #contact {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+:root.dark #work, :root.dark #contact {
+    background-color: rgba(38, 38, 38, 0.5);
+}
+
+.timeline-line {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background-color: var(--color-border);
+    transform: translateX(-50%);
+}
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+}
+.timeline-dot {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background-color: var(--color-bg);
+    border: 3px solid var(--color-border);
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+.timeline-content {
+    background-color: var(--color-card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.timeline-item:hover .timeline-dot {
+    border-color: var(--color-accent);
+    transform: translateX(-50%) scale(1.1);
+}
+.timeline-item:hover .timeline-content {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.07);
+}
+
+#passions-content .prose h3, #passions-content .prose h4 {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--color-text);
+}
+#passions-content .prose p, #passions-content .prose li {
+    color: var(--color-text-secondary);
+}
+#passions-content .prose strong {
+    color: var(--color-text);
+}
+#passions-content .prose blockquote {
+    font-style: italic;
+    color: var(--color-text);
+    border-left-color: var(--color-accent);
+    padding-left: 1em;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    color: var(--color-text-secondary);
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.contact-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px -4px rgba(183, 65, 14, 0.2);
+}
+.contact-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Dark mode text color overrides */
+:root.dark .text-stone-800,
+:root.dark .text-stone-600,
+:root.dark .text-stone-700 {
+    color: var(--color-text) !important;
+}
+
+:root.dark .text-stone-600 {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Navigation brand name */
+:root.dark .text-stone-800 {
+    color: var(--color-text) !important;
+}
+
+/* Passions section prose content dark mode fixes */
+:root.dark #passions-content,
+:root.dark #passions-content *,
+:root.dark #passions-content .prose,
+:root.dark #passions-content .prose *,
+:root.dark #passions-content .prose p,
+:root.dark #passions-content .prose li,
+:root.dark #passions-content .prose h1,
+:root.dark #passions-content .prose h2,
+:root.dark #passions-content .prose h3,
+:root.dark #passions-content .prose h4,
+:root.dark #passions-content .prose h5,
+:root.dark #passions-content .prose h6,
+:root.dark #passions-content .prose div,
+:root.dark #passions-content .prose span,
+:root.dark #passions-content .prose a {
+    color: var(--color-text) !important;
+}
+
+:root.dark #passions-content .prose strong,
+:root.dark #passions-content .prose b {
+    color: var(--color-text) !important;
+}
+
+:root.dark #passions-content .prose em,
+:root.dark #passions-content .prose i {
+    color: var(--color-text-secondary) !important;
+}
+
+:root.dark #passions-content .prose blockquote,
+:root.dark #passions-content .prose blockquote * {
+    color: var(--color-text) !important;
+    border-left-color: var(--color-accent) !important;
+}
+
+:root.dark #passions-content .prose ul,
+:root.dark #passions-content .prose ol,
+:root.dark #passions-content .prose ul *,
+:root.dark #passions-content .prose ol * {
+    color: var(--color-text) !important;
+}
+
+:root.dark #passions-content .prose code {
+    color: var(--color-accent) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Additional catch-all rules for any missed elements */
+:root.dark #passions-content .prose-lg,
+:root.dark #passions-content .prose-lg *,
+:root.dark #passions-content .max-w-none,
+:root.dark #passions-content .max-w-none * {
+    color: var(--color-text) !important;
+}
+
+/* Specific overrides for Tailwind prose classes */
+:root.dark .prose-stone,
+:root.dark .prose-stone *,
+:root.dark .prose-gray,
+:root.dark .prose-gray * {
+    color: var(--color-text) !important;
+}
+
+/* Theme and language toggle buttons */
+:root.dark #theme-toggle,
+:root.dark #lang-toggle {
+    color: var(--color-text) !important;
+}
+
+:root.dark #theme-toggle:hover,
+:root.dark #lang-toggle:hover {
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Mobile menu button */
+:root.dark #mobile-menu-button {
+    color: var(--color-text) !important;
+}
+
+/* Project cards and content */
+:root.dark .bg-white {
+    background-color: var(--color-card-bg) !important;
+}
+
+:root.dark .text-stone-600,
+:root.dark .text-stone-700 {
+    color: var(--color-text-secondary) !important;
+}
+
+:root.dark .text-stone-800 {
+    color: var(--color-text) !important;
+}
